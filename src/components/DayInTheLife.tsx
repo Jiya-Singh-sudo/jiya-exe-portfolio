@@ -22,13 +22,13 @@ const segmentSubtitles: Record<string, string> = {
 };
 
 const galleryImages = [
-  { url: '/assets/training_arc_segment.png', alt: 'Gym & Study' },
-  { url: '/assets/opportunity_board_segment.png', alt: 'Job Search & Outreach' },
-  { url: '/assets/forge_segment.png', alt: 'Projects & Coding' },
-  { url: '/assets/campfire_segment.png', alt: 'AI Learning & Reflection' },
-  { url: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=300&auto=format&fit=crop&q=60', alt: 'Coffee & Books' },
-  { url: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=300&auto=format&fit=crop&q=60', alt: 'Desk Setup' },
-  { url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&auto=format&fit=crop&q=60', alt: 'VS Code Editor' },
+  { url: '/assets/GATE_study.png', alt: 'GATE & Study' },
+  { url: '/assets/food_hobby.png', alt: 'Food & Hobby' },
+  { url: '/assets/Developing.png', alt: 'Projects & Coding' },
+  { url: '/assets/swimming_hobby.png', alt: 'Swimming & Reflection' },
+  { url: '/assets/reading_hobby.png', alt: 'Reading & AI' },
+  { url: '/assets/chess_hobby.png', alt: 'Chess & Strategy' },
+  { url: '/assets/dancing_hobby.png', alt: 'Dancing & Creative Time' },
 ];
 
 export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheLifeProps) {
