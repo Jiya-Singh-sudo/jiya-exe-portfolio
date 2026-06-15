@@ -1,0 +1,6 @@
+{
+  "name": "JIYA.EXE - QUEST LOG",
+  "description": "Interactive 16-bit retro RPG portfolio and quest log for Jiya, featuring dynamic stat gains, active to-do quests, skills progression, catalogued library, observatory coordinates, and retro synth sound synthesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

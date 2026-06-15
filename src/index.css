@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Press+Start+2P&family=VT323&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f2ca50;
+  --color-primary-container: #d4af37;
+  --color-on-primary: #3c2f00;
+  --color-on-primary-container: #554300;
+  --color-secondary: #c3cc8c;
+  --color-secondary-container: #434b18;
+  --color-on-secondary: #2d3404;
+  --color-on-secondary-container: #b1bb7c;
+  --color-background: #131411;
+  --color-surface: #131411;
+  --color-surface-container-low: #1c1c19;
+  --color-surface-container: #20201d;
+  --color-surface-container-high: #2a2a27;
+  --color-surface-container-highest: #353531;
+  --color-on-surface: #e5e2dd;
+  --color-on-surface-variant: #d0c5af;
+  --color-outline: #99907c;
+  --color-outline-variant: #4d4635;
+  --color-tertiary: #ffc19e;
+  --color-tertiary-container: #f89c64;
+  --color-on-tertiary-container: #723200;
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-pixel-title: "Press Start 2P", monospace;
+  --font-pixel-text: "VT323", monospace;
+}
+
+@layer utilities {
+  .retro-frame {
+    border: 6px solid #1a1008;
+    outline: 3px solid #5c4028;
+    outline-offset: -9px;
+    background-color: #140d07;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.95);
+  }
+
+  .carved-panel {
+    box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.04), 
+                inset -1px -1px 0px rgba(0, 0, 0, 0.35),
+                0 4px 6px -1px rgba(0,0,0,0.2);
+  }
+  
+  .rpg-border {
+    border: 2px solid #3d3d35;
+  }
+
+  .press-start-btn {
+    box-shadow: 0 4px 0 #99907c;
+    transition: all 0.08s ease;
+  }
+  
+  .press-start-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #99907c;
+  }
+
+  .exp-bar-fill {
+    background: linear-gradient(90deg, #f2ca50 0%, #ffe088 100%);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.4) inset;
+  }
+
+  .scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.08) 50%);
+    background-size: 100% 4px;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.12;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 6px rgba(242, 202, 80, 0.45);
+  }
+  
+  .pixel-corners {
+    image-rendering: pixelated;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1c19;
+}
+::-webkit-scrollbar-thumb {
+  background: #4d4635;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #99907c;
+}
+
+/* Make Material icons easily available and properly sized */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* RPG Reward Modal Styles */
+.reward-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.reward-modal {
+  width: 500px;
+  max-width: 90%;
+  background: #0d0d09;
+  border: 2px solid var(--color-primary, #d4af37);
+  box-shadow:
+    0 0 30px rgba(242, 202, 80, 0.15),
+    inset 0 0 15px rgba(242, 202, 80, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+.reward-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(242, 202, 80, 0.2);
+  color: var(--color-primary, #d4af37);
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.reward-content {
+  padding: 24px;
+}
+
+.reward-content h3 {
+  color: #f5e6a8;
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.reward-content p {
+  color: #b8b8a6;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+.rewards {
+  margin: 20px 0;
+  display: flex;
+  gap: 16px;
+}
+
+.rewards div {
+  flex: 1;
+  text-align: center;
+  border: 1px solid rgba(242, 202, 80, 0.3);
+  background: rgba(242, 202, 80, 0.05);
+  padding: 12px;
+  color: #facc15;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.reward-content button {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-container, #d4af37),
+    var(--color-primary, #facc15)
+  );
+  color: #1a1a1a;
+  border: none;
+  padding: 14px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.reward-content button:hover {
+  opacity: 0.9;
+}
+
