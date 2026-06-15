@@ -1128,6 +1128,20 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-center gap-4.5 w-full lg:w-auto">
             {/* Jiya Profile Block */}
             <div className="flex items-center gap-3 w-full sm:w-auto">
+              {/* Custom JIYA.EXE Logo Icon */}
+              <div className="relative flex-shrink-0">
+                <img
+                  src="/logo.png"
+                  alt="JIYA.EXE Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full drop-shadow-[0_0_8px_rgba(242,202,80,0.5)] select-none"
+                />
+                {unlockedPurchases.includes('legendary-cape') && (
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-500/30 to-transparent animate-pulse pointer-events-none" />
+                )}
+              </div>
+
               {/* Hologram Circle Portrait frame */}
               <div className={`relative w-11 h-11 border-2 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-high transition-all ${
                 unlockedPurchases.includes('legendary-cape') 
@@ -1933,7 +1947,7 @@ export default function App() {
                 {/* 1. JIYA.EXE PROFILE (PERMANENT) */}
                 <div className="p-4 rounded-lg bg-surface-container-low border border-outline-variant flex flex-col gap-3.5 shadow-inner relative overflow-hidden">
                   <div className="absolute top-2 right-2 font-mono text-[7px] text-outline tracking-wider select-none uppercase">
-                    SYS-REFS: JIYA.EXE
+                    SYS-REFS: g
                   </div>
 
                   {/* Character avatar and details */}
