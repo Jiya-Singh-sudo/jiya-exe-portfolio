@@ -24,7 +24,7 @@ const segmentSubtitles: Record<string, string> = {
 const galleryImages = [
   { url: '/GATE_study.png', alt: 'GATE & Study' },
   { url: '/food_hobby.png', alt: 'Food & Hobby' },
-  { url: '/eveloping.png', alt: 'Projects & Coding' },
+  { url: '/developing.png', alt: 'Projects & Coding' },
   { url: '/swimming_hobby.png', alt: 'Swimming & Reflection' },
   { url: '/reading_hobby.png', alt: 'Reading & AI' },
   { url: '/chess_hobby.png', alt: 'Chess & Strategy' },
