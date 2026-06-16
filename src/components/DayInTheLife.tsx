@@ -22,13 +22,13 @@ const segmentSubtitles: Record<string, string> = {
 };
 
 const galleryImages = [
-  { url: '/public/GATE_study.png', alt: 'GATE & Study' },
-  { url: '/public/food_hobby.png', alt: 'Food & Hobby' },
-  { url: '/public/Developing.png', alt: 'Projects & Coding' },
-  { url: '/public/swimming_hobby.png', alt: 'Swimming & Reflection' },
-  { url: '/public/reading_hobby.png', alt: 'Reading & AI' },
-  { url: '/public/chess_hobby.png', alt: 'Chess & Strategy' },
-  { url: '/public/dancing_hobby.png', alt: 'Dancing & Creative Time' },
+  { url: '/GATE_study.png', alt: 'GATE & Study' },
+  { url: '/food_hobby.png', alt: 'Food & Hobby' },
+  { url: '/Developing.png', alt: 'Projects & Coding' },
+  { url: '/swimming_hobby.png', alt: 'Swimming & Reflection' },
+  { url: '/reading_hobby.png', alt: 'Reading & AI' },
+  { url: '/chess_hobby.png', alt: 'Chess & Strategy' },
+  { url: '/dancing_hobby.png', alt: 'Dancing & Creative Time' },
 ];
 
 export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheLifeProps) {
@@ -79,8 +79,8 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
                     setActiveSegmentId(seg.id);
                   }}
                   className={`p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer flex items-center gap-3 select-none ${isSelected
-                      ? 'border-primary bg-primary/5 shadow-[0_0_12px_rgba(242,202,80,0.12)]'
-                      : 'border-outline-variant bg-surface-container-low hover:bg-surface-container'
+                    ? 'border-primary bg-primary/5 shadow-[0_0_12px_rgba(242,202,80,0.12)]'
+                    : 'border-outline-variant bg-surface-container-low hover:bg-surface-container'
                     }`}
                 >
                   <div className="text-2xl group-hover:scale-110 transition-transform">

@@ -188,8 +188,8 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
                     setSelectedStar(null);
                   }}
                   className={`w-full py-2 px-3 border-2 text-left transition-all cursor-pointer text-lg rounded flex items-center gap-2.5 ${isSelected
-                      ? 'bg-[#140d07] border-[#ffd65a] text-[#ffd65a] shadow-[0_0_8px_rgba(255,214,90,0.25)]'
-                      : 'bg-transparent border-transparent text-[#8c7d70] hover:text-[#e8e3d9] hover:bg-[#1a120b]'
+                    ? 'bg-[#140d07] border-[#ffd65a] text-[#ffd65a] shadow-[0_0_8px_rgba(255,214,90,0.25)]'
+                    : 'bg-transparent border-transparent text-[#8c7d70] hover:text-[#e8e3d9] hover:bg-[#1a120b]'
                     }`}
                 >
                   <span className="text-xl">
@@ -244,7 +244,7 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
       </div>
 
       {/* Right Graphic Constellation Panel (Dashboard backdrop) */}
-      <div className="w-full md:w-[72%] relative min-h-[460px] md:min-h-auto bg-[url('/public/constellation_background.png')] bg-[length:100%_100%] bg-no-repeat flex flex-col justify-between overflow-hidden">
+      <div className="w-full md:w-[72%] relative min-h-[460px] md:min-h-auto bg-[url('/constellation_background.png')] bg-[length:100%_100%] bg-no-repeat flex flex-col justify-between overflow-hidden">
         {/* Transparent overlay */}
         <div className="absolute inset-0 bg-black/15 pointer-events-none" />
 
@@ -360,8 +360,8 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
                     <span
                       onClick={() => handleStarClick(star)}
                       className={`mt-1 font-pixel-text whitespace-nowrap transition-opacity cursor-pointer ${star.isDecorative
-                          ? 'text-[#8c7d70]/80 text-[8px] opacity-0 group-hover:opacity-100'
-                          : 'text-[#e8e3d9] opacity-80 text-[10px]'
+                        ? 'text-[#8c7d70]/80 text-[8px] opacity-0 group-hover:opacity-100'
+                        : 'text-[#e8e3d9] opacity-80 text-[10px]'
                         }`}
                     >
                       {star.name}

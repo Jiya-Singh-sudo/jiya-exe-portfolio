@@ -229,7 +229,7 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
         {/* Background Forest Layer */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25 pointer-events-none select-none"
-          style={{ backgroundImage: "url('/public/dark-forest-bg.png')" }}
+          style={{ backgroundImage: "url('/dark-forest-bg.png')" }}
         />
 
         {/* Dark fantasy ambient overlays */}
@@ -340,10 +340,10 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
                 key={node.id}
                 whileHover={{ scale: 1.03 }}
                 className={`absolute cursor-pointer select-none transition-all duration-200 w-[115px] h-[28px] md:h-[30px] flex items-center justify-center rounded-2xl border ${isSelected || isHovered
-                    ? 'border-primary bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,202,80,0.2)]'
-                    : isVisited
-                      ? 'border-outline/40 text-on-surface-variant bg-[#141416]/95 hover:border-outline hover:text-white shadow-md'
-                      : 'border-outline-variant/40 text-outline bg-[#0f0f10]/90 hover:border-outline-variant hover:text-on-surface-variant shadow'
+                  ? 'border-primary bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,202,80,0.2)]'
+                  : isVisited
+                    ? 'border-outline/40 text-on-surface-variant bg-[#141416]/95 hover:border-outline hover:text-white shadow-md'
+                    : 'border-outline-variant/40 text-outline bg-[#0f0f10]/90 hover:border-outline-variant hover:text-on-surface-variant shadow'
                   }`}
                 style={{ left: `${coords.x}px`, top: `${coords.y}px`, transform: 'translate(-50%, -50%)', zIndex: 12 }}
                 onMouseEnter={() => setHoveredNode(node.id)}

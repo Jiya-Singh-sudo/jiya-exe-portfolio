@@ -504,7 +504,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Completed'
       }
     ],
-    imageUrl: '/public/Gym_image.png',
+    imageUrl: '/Gym_image.png',
     imageAlt: 'Morning workout and focused study setup'
   },
 
@@ -528,7 +528,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Completed'
       }
     ],
-    imageUrl: '/public/networking.png',
+    imageUrl: '/networking.png',
     imageAlt: 'Job applications and professional networking'
   },
 
@@ -552,7 +552,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Completed'
       }
     ],
-    imageUrl: '/public/work.png',
+    imageUrl: '/work.png',
     imageAlt: 'Coding an  d engineering workflow'
   },
 
@@ -576,7 +576,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Active'
       }
     ],
-    imageUrl: '/public/study.png',
+    imageUrl: '/study.png',
     imageAlt: 'Night planning and reflection'
   }
 ];

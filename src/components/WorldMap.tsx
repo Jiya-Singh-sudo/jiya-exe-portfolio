@@ -197,7 +197,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
   return (
     <div className="flex flex-col gap-6">
       {/* 2D Landscape Map Node (Hidden under mobile layout to enforce touch density) */}
-      <div className="relative w-full aspect-[3/2] overflow-hidden border-2 border-outline-variant rounded-lg shadow-2xl hidden md:block select-none bg-[url('/public/map_bg.png')] bg-[length:100%_100%] bg-no-repeat bg-center">
+      <div className="relative w-full aspect-[3/2] overflow-hidden border-2 border-outline-variant rounded-lg shadow-2xl hidden md:block select-none bg-[url('/map_bg.png')] bg-[length:100%_100%] bg-no-repeat bg-center">
 
         {/* Dynamic Weather System Particle Overlay */}
         <WeatherOverlay weatherId={activeWeatherId} />
@@ -213,8 +213,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('sync'); }}
               className={`px-2 py-1 rounded text-[10px] font-mono leading-none transition-all flex items-center gap-1 cursor-pointer ${localWeatherOverride === 'sync'
-                  ? 'bg-primary text-on-primary font-bold shadow-sm'
-                  : 'bg-[#1e1e1a] text-outline hover:text-white hover:bg-[#2a2a22]'
+                ? 'bg-primary text-on-primary font-bold shadow-sm'
+                : 'bg-[#1e1e1a] text-outline hover:text-white hover:bg-[#2a2a22]'
                 }`}
               title="Synchronize to real-time chronological forecast"
             >
@@ -225,8 +225,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('clear'); }}
               className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'clear'
-                  ? 'bg-amber-500 text-black font-bold shadow-sm'
-                  : 'bg-[#1e1e1a] text-outline hover:text-amber-400 hover:bg-[#2a2a22]'
+                ? 'bg-amber-500 text-black font-bold shadow-sm'
+                : 'bg-[#1e1e1a] text-outline hover:text-amber-400 hover:bg-[#2a2a22]'
                 }`}
               title="Force Clear Skies (1.0x XP)"
             >
@@ -236,8 +236,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('rain'); }}
               className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'rain'
-                  ? 'bg-indigo-500 text-white font-bold shadow-sm'
-                  : 'bg-[#1e1e1a] text-outline hover:text-indigo-400 hover:bg-[#2a2a22]'
+                ? 'bg-indigo-500 text-white font-bold shadow-sm'
+                : 'bg-[#1e1e1a] text-outline hover:text-indigo-400 hover:bg-[#2a2a22]'
                 }`}
               title="Force Electric Rainstorm (1.25x XP)"
             >
@@ -247,8 +247,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('snow'); }}
               className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'snow'
-                  ? 'bg-sky-450 text-black font-bold shadow-sm'
-                  : 'bg-[#1e1e1a] text-outline hover:text-sky-300 hover:bg-[#2a2a22]'
+                ? 'bg-sky-450 text-black font-bold shadow-sm'
+                : 'bg-[#1e1e1a] text-outline hover:text-sky-300 hover:bg-[#2a2a22]'
                 }`}
               title="Force Aether Blizzard (1.2x XP)"
             >
@@ -258,8 +258,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('fog'); }}
               className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'fog'
-                  ? 'bg-purple-500 text-white font-bold shadow-sm'
-                  : 'bg-[#1e1e1a] text-outline hover:text-purple-300 hover:bg-[#2a2a22]'
+                ? 'bg-purple-500 text-white font-bold shadow-sm'
+                : 'bg-[#1e1e1a] text-outline hover:text-purple-300 hover:bg-[#2a2a22]'
                 }`}
               title="Force Arcane Fog (1.15x XP)"
             >
@@ -464,8 +464,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
                     {/* Highly polished, Cozy 16-bit Signboard marker button overlay */}
                     <div className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md border-2 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.55)] cursor-pointer group select-none whitespace-nowrap bg-black/85 ${isHovered || isTarget
-                        ? 'border-primary text-primary scale-105 shadow-[0_4px_15px_rgba(255,214,90,0.35)] ring-1 ring-primary/45'
-                        : 'border-[#4a3b32] text-stone-300'
+                      ? 'border-primary text-primary scale-105 shadow-[0_4px_15px_rgba(255,214,90,0.35)] ring-1 ring-primary/45'
+                      : 'border-[#4a3b32] text-stone-300'
                       }`}>
                       <span className={`material-symbols-outlined text-[15px] transition-colors ${isHovered || isTarget ? 'text-primary' : 'text-stone-400'
                         }`}>
@@ -521,8 +521,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                 key={loc.id}
                 onClick={() => handleLocationClick(loc.id)}
                 className={`p-4 rounded-lg cursor-pointer border-2 transition-all flex flex-col justify-between carved-panel relative overflow-hidden group ${hasQuest
-                    ? 'border-primary bg-primary/5 shadow'
-                    : 'border-[#3D3D35] hover:border-[#55554D] bg-surface-container-low hover:bg-surface-container'
+                  ? 'border-primary bg-primary/5 shadow'
+                  : 'border-[#3D3D35] hover:border-[#55554D] bg-surface-container-low hover:bg-surface-container'
                   }`}
               >
                 {/* Active Quest banner label */}
