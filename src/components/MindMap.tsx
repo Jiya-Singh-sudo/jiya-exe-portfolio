@@ -22,7 +22,7 @@ const getNodeColorClass = (group: GardenNode['group'], active: boolean) => {
 };
 
 const getNodeColor = (group: GardenNode['group']) => {
-  switch(group) {
+  switch (group) {
     case 'root': return 'bg-primary border-white fill-primary';
     case 'engineering': return 'bg-emerald-500 border-emerald-400 fill-emerald-500';
     case 'ai': return 'bg-blue-500 border-blue-400 fill-blue-500';
@@ -51,16 +51,16 @@ const getNodeCoordinates = (nodeId: string) => {
   switch (nodeId) {
     // Center
     case 'jiya': return { x: 500, y: 370 };
-    
+
     // Left Branches
     case 'engineering': return { x: 350, y: 135 };
     case 'life': return { x: 350, y: 350 };
     case 'creativity': return { x: 350, y: 575 };
-    
+
     // Right Branches
     case 'ai': return { x: 650, y: 175 };
     case 'productivity': return { x: 650, y: 495 };
-    
+
     // Engineering leaves (at X: 140)
     case 'security': return { x: 140, y: 30 };
     case 'system-design': return { x: 140, y: 65 };
@@ -69,7 +69,7 @@ const getNodeCoordinates = (nodeId: string) => {
     case 'apis': return { x: 140, y: 170 };
     case 'databases': return { x: 140, y: 205 };
     case 'scalability': return { x: 140, y: 240 };
-    
+
     // Life leaves (at X: 140)
     case 'personal-growth': return { x: 140, y: 295 };
     case 'fitness': return { x: 140, y: 330 };
@@ -77,14 +77,14 @@ const getNodeCoordinates = (nodeId: string) => {
     case 'travel': return { x: 140, y: 400 };
     case 'finance': return { x: 140, y: 435 };
     case 'food': return { x: 140, y: 470 };
-    
+
     // Creativity leaves (at X: 140)
     case 'photography': return { x: 140, y: 525 };
     case 'writing': return { x: 140, y: 560 };
     case 'ui-design': return { x: 140, y: 595 };
     case 'storytelling': return { x: 140, y: 630 };
     case 'side-projects': return { x: 140, y: 665 };
-    
+
     // AI leaves (at X: 840)
     case 'automation': return { x: 840, y: 40 };
     case 'gemini-api': return { x: 840, y: 85 };
@@ -93,7 +93,7 @@ const getNodeCoordinates = (nodeId: string) => {
     case 'nlp': return { x: 840, y: 220 };
     case 'rag': return { x: 840, y: 265 };
     case 'embeddings': return { x: 840, y: 310 };
-    
+
     // Productivity leaves (at X: 840)
     case 'learning-systems': return { x: 840, y: 380 };
     case 'atomic-habits': return { x: 840, y: 425 };
@@ -101,7 +101,7 @@ const getNodeCoordinates = (nodeId: string) => {
     case 'second-brain': return { x: 840, y: 515 };
     case 'focus-systems': return { x: 840, y: 560 };
     case 'goal-tracking': return { x: 840, y: 605 };
-    
+
     default: return { x: 500, y: 370 };
   }
 };
@@ -118,13 +118,13 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
   const handleNodeClick = (node: GardenNode) => {
     playClick();
     setSelectedNode(node);
-    
+
     if (!clickedNodesCount.includes(node.id) && node.id !== 'jiya') {
       onSetClickedNode(node.id);
       const updatedListLen = clickedNodesCount.length + 1;
-      
+
       onGrantReward(10, 30, `Discovered Garden Node: ${node.label}! Gained +10G and 30 EXP!`);
-      
+
       if (updatedListLen === 3) {
         onGrantReward(50, 100, `Completed 'Audit Systems Nodes' Quest! Gained +50G and +100 EXP!`);
         playXPChime();
@@ -141,32 +141,32 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
   const renderConnectionPath = (fromId: string, toId: string, group: GardenNode['group']) => {
     const from = getNodeCoordinates(fromId);
     const to = getNodeCoordinates(toId);
-    
+
     const isFromActive = hoveredNode === fromId || selectedNode?.id === fromId;
     const isToActive = hoveredNode === toId || selectedNode?.id === toId;
     const isActive = isFromActive || isToActive;
-    
+
     const colorClass = getNodeColorClass(group, isActive);
     const path = drawBezierPath(from.x, from.y, to.x, to.y);
-    
+
     return (
       <g key={`${fromId}-${toId}`}>
         {/* Outer ambient glow path */}
-        <path 
-          d={path} 
-          fill="none" 
-          stroke={colorClass.hex} 
-          strokeWidth="3.5" 
-          strokeOpacity={isActive ? 0.35 : 0.08} 
+        <path
+          d={path}
+          fill="none"
+          stroke={colorClass.hex}
+          strokeWidth="3.5"
+          strokeOpacity={isActive ? 0.35 : 0.08}
           className="transition-all duration-300"
         />
         {/* Core connection path */}
-        <path 
-          d={path} 
-          fill="none" 
-          stroke={colorClass.hex} 
-          strokeWidth="1.5" 
-          strokeOpacity={isActive ? 0.8 : 0.25} 
+        <path
+          d={path}
+          fill="none"
+          stroke={colorClass.hex}
+          strokeWidth="1.5"
+          strokeOpacity={isActive ? 0.8 : 0.25}
           className="transition-all duration-300"
         />
         {/* Glowing firefly dot animated path */}
@@ -175,10 +175,10 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
           fill={isActive ? '#ffffff' : colorClass.particleHex}
           animate={{ opacity: isActive ? 1 : 0.4 }}
         >
-          <animateMotion 
-            dur={`${4 + Math.random() * 3}s`} 
-            repeatCount="indefinite" 
-            path={path} 
+          <animateMotion
+            dur={`${4 + Math.random() * 3}s`}
+            repeatCount="indefinite"
+            path={path}
           />
         </motion.circle>
       </g>
@@ -209,7 +209,7 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
         </div>
         <div className="flex items-center gap-4">
           <span className="font-mono text-[10px] text-outline uppercase hidden sm:inline">{clickedNodesCount.length}/31 Nodes Audited</span>
-          <button 
+          <button
             onClick={handleBackToMap}
             className="w-9 h-9 border border-outline-variant hover:border-primary rounded flex items-center justify-center text-outline hover:text-primary transition-colors bg-background/50"
             title="Back to Map"
@@ -225,19 +225,19 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
 
       {/* Coordinate-Free Layout Viewport Box */}
       <div className="relative bg-[#0a0a0a] rounded-lg border-2 border-outline-variant min-h-[720px] overflow-x-auto flex items-center justify-center carved-panel select-none">
-        
+
         {/* Background Forest Layer */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-25 pointer-events-none select-none"
-          style={{ backgroundImage: "url('/assets/dark-forest-bg.png')" }}
+          style={{ backgroundImage: "url('/public/dark-forest-bg.png')" }}
         />
-        
+
         {/* Dark fantasy ambient overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/80 pointer-events-none select-none" />
 
         {/* Unified 980px wide relative mindmap container */}
         <div className="relative w-[980px] h-[700px] flex-shrink-0">
-          
+
           {/* SVG Connection Paths Render Layer */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             {/* Center-to-Branch Paths */}
@@ -248,15 +248,15 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
             {renderConnectionPath('jiya', 'productivity', 'productivity')}
 
             {/* Left Branch-to-Leaf Paths */}
-            {leftBranchToLeavesMap.map(bGroup => 
-              bGroup.leaves.map(leafId => 
+            {leftBranchToLeavesMap.map(bGroup =>
+              bGroup.leaves.map(leafId =>
                 renderConnectionPath(bGroup.branch, leafId, GARDEN_NODES.find(n => n.id === bGroup.branch)!.group)
               )
             )}
 
             {/* Right Branch-to-Leaf Paths */}
-            {rightBranchToLeavesMap.map(bGroup => 
-              bGroup.leaves.map(leafId => 
+            {rightBranchToLeavesMap.map(bGroup =>
+              bGroup.leaves.map(leafId =>
                 renderConnectionPath(bGroup.branch, leafId, GARDEN_NODES.find(n => n.id === bGroup.branch)!.group)
               )
             )}
@@ -274,7 +274,7 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
             if (node.id === 'jiya') {
               // Center Avatar
               return (
-                <motion.div 
+                <motion.div
                   key="jiya"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, y: [0, -6, 0] }}
@@ -285,20 +285,20 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
                   onClick={() => handleNodeClick(node)}
                 >
                   <div className="relative flex flex-col items-center">
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 bg-violet-500/20 rounded-full blur-2xl pointer-events-none"
                       animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.95, 1.05, 0.95] }}
                       transition={{ duration: 4, repeat: Infinity }}
                     />
-                    
+
                     <div className="w-[84px] h-[84px] md:w-[94px] md:h-[94px] rounded-full overflow-hidden border-[5px] border-violet-300 shadow-[0_0_24px_rgba(167,139,250,0.35)] bg-[#1c1c1f]">
-                      <img 
+                      <img
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDD7FMhUjA0kK9i-HW1opUvIWfO0k-2u--boOJ15vOlu25X9PjrZFGxjNnCn3KOjFjXFALox177-d_jE3ZXjMa8TNUy-wEVB1YsdFUbWsWGIF6XEhBkGEM3XuLKUAdQixwxmGyHl7l03_k7yFpPJTHLIgB7gm7QZLb0mvBHCUpIdZDuLYTs3wFDj7Pue6t94P2hNvBMUnZCk_Bh1D77o4IGN-usyOSnK-tHX6Yct3GD6GYSGuTxedmMmeXCzjqd5CTB7jZUZXeFJs"
-                        alt="Jiya" 
+                        alt="Jiya"
                         className="w-full h-full object-cover select-none"
                       />
                     </div>
-                    
+
                     <div className="mt-2 px-3 py-0.5 bg-black/80 text-white text-[10px] uppercase font-mono font-extrabold rounded-full border border-violet-400/50 shadow">
                       JIYA
                     </div>
@@ -310,17 +310,16 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
             if (isBranch) {
               // Branch Cards
               return (
-                <motion.div 
+                <motion.div
                   key={node.id}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className={`absolute cursor-pointer select-none transition-all duration-300 w-[125px] h-[36px] md:h-[40px] flex items-center justify-center rounded-3xl border-2 font-display font-bold text-xs tracking-wide ${
-                    getNodeBorderClass(node.group, isSelected || isHovered)
-                  }`}
-                  style={{ 
-                    left: `${coords.x}px`, 
-                    top: `${coords.y}px`, 
-                    transform: 'translate(-50%, -50%)', 
+                  className={`absolute cursor-pointer select-none transition-all duration-300 w-[125px] h-[36px] md:h-[40px] flex items-center justify-center rounded-3xl border-2 font-display font-bold text-xs tracking-wide ${getNodeBorderClass(node.group, isSelected || isHovered)
+                    }`}
+                  style={{
+                    left: `${coords.x}px`,
+                    top: `${coords.y}px`,
+                    transform: 'translate(-50%, -50%)',
                     zIndex: 15,
                     boxShadow: isSelected || isHovered ? `0 0 22px 3px ${colorClass.hex}60` : `0 4px 12px rgba(0,0,0,0.4)`
                   }}
@@ -337,16 +336,15 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
 
             // Leaf Node Cards
             return (
-              <motion.div 
+              <motion.div
                 key={node.id}
                 whileHover={{ scale: 1.03 }}
-                className={`absolute cursor-pointer select-none transition-all duration-200 w-[115px] h-[28px] md:h-[30px] flex items-center justify-center rounded-2xl border ${
-                  isSelected || isHovered
+                className={`absolute cursor-pointer select-none transition-all duration-200 w-[115px] h-[28px] md:h-[30px] flex items-center justify-center rounded-2xl border ${isSelected || isHovered
                     ? 'border-primary bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,202,80,0.2)]'
                     : isVisited
                       ? 'border-outline/40 text-on-surface-variant bg-[#141416]/95 hover:border-outline hover:text-white shadow-md'
                       : 'border-outline-variant/40 text-outline bg-[#0f0f10]/90 hover:border-outline-variant hover:text-on-surface-variant shadow'
-                }`}
+                  }`}
                 style={{ left: `${coords.x}px`, top: `${coords.y}px`, transform: 'translate(-50%, -50%)', zIndex: 12 }}
                 onMouseEnter={() => setHoveredNode(node.id)}
                 onMouseLeave={() => setHoveredNode(null)}
@@ -366,14 +364,14 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
       {/* Selected thought inspection overlay slide */}
       <AnimatePresence>
         {selectedNode && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             className="p-4 rounded-lg bg-surface-container-high border-2 border-outline-variant relative carved-panel"
           >
             <div className="absolute top-2.5 right-2.5">
-              <button 
+              <button
                 onClick={() => setSelectedNode(null)}
                 className="text-outline hover:text-white"
               >
@@ -403,7 +401,7 @@ export const MindMap: React.FC<MindMapProps> = ({ onGrantReward, clickedNodesCou
 
       {/* Bottom controls and Garden Footer */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-2 border-t border-outline-variant/40 pt-3">
-        <button 
+        <button
           onClick={handleBackToMap}
           className="px-4 py-2 border border-outline-variant hover:border-primary text-outline hover:text-primary rounded-lg text-xs font-display font-semibold transition-colors flex items-center gap-1.5 bg-background/50 select-none"
         >

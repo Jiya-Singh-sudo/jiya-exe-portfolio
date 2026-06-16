@@ -16,85 +16,85 @@ interface LocationConfig {
 }
 
 const WORLD_LOCATIONS: LocationConfig[] = [
-  { 
-    id: 'workshop', 
-    name: 'WORKSHOP', 
-    badge: 'Active Projects', 
-    icon: 'construction', 
-    coords: 'X: 32 Y: 26', 
-    textColor: 'text-primary', 
-    desc: 'Where engineering concepts are structured, APIs forged, and code compiled into production-ready web servers.', 
-    levelRequired: 1 
+  {
+    id: 'workshop',
+    name: 'WORKSHOP',
+    badge: 'Active Projects',
+    icon: 'construction',
+    coords: 'X: 32 Y: 26',
+    textColor: 'text-primary',
+    desc: 'Where engineering concepts are structured, APIs forged, and code compiled into production-ready web servers.',
+    levelRequired: 1
   },
-  { 
-    id: 'library', 
-    name: 'LIBRARY', 
-    badge: 'Knowledge Base', 
-    icon: 'menu_book', 
-    coords: 'X: 85 Y: 22', 
-    textColor: 'text-secondary', 
-    desc: 'Ancient compendiums of developer reading checklists, course outlines, notes and philosophy scrolls.', 
-    levelRequired: 1 
+  {
+    id: 'library',
+    name: 'LIBRARY',
+    badge: 'Knowledge Base',
+    icon: 'menu_book',
+    coords: 'X: 85 Y: 22',
+    textColor: 'text-secondary',
+    desc: 'Ancient compendiums of developer reading checklists, course outlines, notes and philosophy scrolls.',
+    levelRequired: 1
   },
-  { 
-    id: 'life', 
-    name: 'DAY IN THE LIFE', 
-    badge: 'Routines & Habit Flow', 
-    icon: 'favorite', 
-    coords: 'X: 60 Y: 20', 
-    textColor: 'text-orange-300', 
-    desc: 'Hourly schedule tracker detailing slow coffee-fuel mornings, hyper-focus build blocks, gym grids, and daily night diaries.', 
-    levelRequired: 1 
+  {
+    id: 'life',
+    name: 'DAY IN THE LIFE',
+    badge: 'Routines & Habit Flow',
+    icon: 'favorite',
+    coords: 'X: 60 Y: 20',
+    textColor: 'text-orange-300',
+    desc: 'Hourly schedule tracker detailing slow coffee-fuel mornings, hyper-focus build blocks, gym grids, and daily night diaries.',
+    levelRequired: 1
   },
-  { 
-    id: 'progress', 
-    name: 'PROGRESS', 
-    badge: 'Milestones & Timeline', 
-    icon: 'trending_up', 
-    coords: 'X: 23 Y: 58', 
-    textColor: 'text-blue-300', 
-    desc: 'Dossiers cataloging professional cloud certifications, award badges, and general engineering lessons learned.', 
-    levelRequired: 1 
+  {
+    id: 'progress',
+    name: 'PROGRESS',
+    badge: 'Milestones & Timeline',
+    icon: 'trending_up',
+    coords: 'X: 23 Y: 58',
+    textColor: 'text-blue-300',
+    desc: 'Dossiers cataloging professional cloud certifications, award badges, and general engineering lessons learned.',
+    levelRequired: 1
   },
-  { 
-    id: 'garden', 
-    name: 'DIGITAL GARDEN', 
-    badge: 'Thoughts & Nodes', 
-    icon: 'eco', 
-    coords: 'X: 68 Y: 58', 
-    textColor: 'text-emerald-300', 
-    desc: 'An interactive topological force-graph connecting design tokens, databases, AI vector systems, and custom prompting patterns.', 
-    levelRequired: 1 
+  {
+    id: 'garden',
+    name: 'DIGITAL GARDEN',
+    badge: 'Thoughts & Nodes',
+    icon: 'eco',
+    coords: 'X: 68 Y: 58',
+    textColor: 'text-emerald-300',
+    desc: 'An interactive topological force-graph connecting design tokens, databases, AI vector systems, and custom prompting patterns.',
+    levelRequired: 1
   },
-  { 
-    id: 'observatory', 
-    name: 'OBSERVATORY', 
-    badge: 'Roadmap & goals', 
-    icon: 'star', 
-    coords: 'X: 88 Y: 62', 
-    textColor: 'text-purple-300', 
-    desc: 'A celestial constellation mapping Jiya’s deep future aspirations, community impact markers, and target technologies.', 
-    levelRequired: 1 
+  {
+    id: 'observatory',
+    name: 'OBSERVATORY',
+    badge: 'Roadmap & goals',
+    icon: 'star',
+    coords: 'X: 88 Y: 62',
+    textColor: 'text-purple-300',
+    desc: 'A celestial constellation mapping Jiya’s deep future aspirations, community impact markers, and target technologies.',
+    levelRequired: 1
   },
-  { 
-    id: 'lab', 
-    name: 'EXPERIMENTS LAB', 
-    badge: 'Prototypes Sandbox', 
-    icon: 'science', 
-    coords: 'X: 46 Y: 58', 
-    textColor: 'text-amber-400', 
-    desc: 'An experimental playground containing short sandbox scripts, LLM vector prompts, and local utility widgets.', 
-    levelRequired: 1 
+  {
+    id: 'lab',
+    name: 'EXPERIMENTS LAB',
+    badge: 'Prototypes Sandbox',
+    icon: 'science',
+    coords: 'X: 46 Y: 58',
+    textColor: 'text-amber-400',
+    desc: 'An experimental playground containing short sandbox scripts, LLM vector prompts, and local utility widgets.',
+    levelRequired: 1
   },
-  { 
-    id: 'cave', 
-    name: 'EXTRAS', 
-    badge: 'Treasures & Potions', 
-    icon: 'sports_esports', 
-    coords: 'X: 36 Y: 86', 
-    textColor: 'text-rose-400', 
-    desc: 'Secret local grotto. Exchange hard-earned Gold coins for focus stamina potions, wisdom scrolls, or rare capes.', 
-    levelRequired: 1 
+  {
+    id: 'cave',
+    name: 'EXTRAS',
+    badge: 'Treasures & Potions',
+    icon: 'sports_esports',
+    coords: 'X: 36 Y: 86',
+    textColor: 'text-rose-400',
+    desc: 'Secret local grotto. Exchange hard-earned Gold coins for focus stamina potions, wisdom scrolls, or rare capes.',
+    levelRequired: 1
   },
 ];
 
@@ -112,12 +112,12 @@ interface WorldMapProps {
   onGrantReward?: (gold: number, xp: number, text: string) => void;
 }
 
-export const WorldMap: React.FC<WorldMapProps> = ({ 
-  onSelectSection, 
-  activeQuests, 
-  onFoundEasterEgg, 
-  weatherId, 
-  onDiscoverSecret, 
+export const WorldMap: React.FC<WorldMapProps> = ({
+  onSelectSection,
+  activeQuests,
+  onFoundEasterEgg,
+  weatherId,
+  onDiscoverSecret,
   discoveredSecrets = [],
   showIntroDialog = false,
   introRewardClaimed = false,
@@ -146,7 +146,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
     if (zoomingTo) return;
     playClick();
     setZoomingTo(locId);
-    
+
     setTimeout(() => {
       onSelectSection(locId);
       setZoomingTo(null);
@@ -197,8 +197,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
   return (
     <div className="flex flex-col gap-6">
       {/* 2D Landscape Map Node (Hidden under mobile layout to enforce touch density) */}
-      <div className="relative w-full aspect-[3/2] overflow-hidden border-2 border-outline-variant rounded-lg shadow-2xl hidden md:block select-none bg-[url('/assets/map_bg.png')] bg-[length:100%_100%] bg-no-repeat bg-center">
-        
+      <div className="relative w-full aspect-[3/2] overflow-hidden border-2 border-outline-variant rounded-lg shadow-2xl hidden md:block select-none bg-[url('/public/map_bg.png')] bg-[length:100%_100%] bg-no-repeat bg-center">
+
         {/* Dynamic Weather System Particle Overlay */}
         <WeatherOverlay weatherId={activeWeatherId} />
 
@@ -208,15 +208,14 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             <span className="font-mono text-[7px] text-outline uppercase tracking-wider block leading-none">AEROSOL SYSTEM</span>
             <span className="font-display font-extrabold text-[8px] text-secondary leading-none uppercase tracking-widest block mt-0.5">Atmosphere Mod</span>
           </div>
-          
+
           <div className="flex items-center gap-1">
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('sync'); }}
-              className={`px-2 py-1 rounded text-[10px] font-mono leading-none transition-all flex items-center gap-1 cursor-pointer ${
-                localWeatherOverride === 'sync'
+              className={`px-2 py-1 rounded text-[10px] font-mono leading-none transition-all flex items-center gap-1 cursor-pointer ${localWeatherOverride === 'sync'
                   ? 'bg-primary text-on-primary font-bold shadow-sm'
                   : 'bg-[#1e1e1a] text-outline hover:text-white hover:bg-[#2a2a22]'
-              }`}
+                }`}
               title="Synchronize to real-time chronological forecast"
             >
               <span className="material-symbols-outlined text-[12px] animate-spin-slow">sync</span>
@@ -225,11 +224,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('clear'); }}
-              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${
-                localWeatherOverride === 'clear'
+              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'clear'
                   ? 'bg-amber-500 text-black font-bold shadow-sm'
                   : 'bg-[#1e1e1a] text-outline hover:text-amber-400 hover:bg-[#2a2a22]'
-              }`}
+                }`}
               title="Force Clear Skies (1.0x XP)"
             >
               <span className="material-symbols-outlined text-[13px]">wb_sunny</span>
@@ -237,11 +235,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('rain'); }}
-              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${
-                localWeatherOverride === 'rain'
+              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'rain'
                   ? 'bg-indigo-500 text-white font-bold shadow-sm'
                   : 'bg-[#1e1e1a] text-outline hover:text-indigo-400 hover:bg-[#2a2a22]'
-              }`}
+                }`}
               title="Force Electric Rainstorm (1.25x XP)"
             >
               <span className="material-symbols-outlined text-[13px]">thunderstorm</span>
@@ -249,11 +246,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('snow'); }}
-              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${
-                localWeatherOverride === 'snow'
+              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'snow'
                   ? 'bg-sky-450 text-black font-bold shadow-sm'
                   : 'bg-[#1e1e1a] text-outline hover:text-sky-300 hover:bg-[#2a2a22]'
-              }`}
+                }`}
               title="Force Aether Blizzard (1.2x XP)"
             >
               <span className="material-symbols-outlined text-[13px]">ac_unit</span>
@@ -261,11 +257,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
             <button
               onClick={() => { playClick(); setLocalWeatherOverride('fog'); }}
-              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${
-                localWeatherOverride === 'fog'
+              className={`p-1.5 rounded transition-all flex items-center justify-center cursor-pointer ${localWeatherOverride === 'fog'
                   ? 'bg-purple-500 text-white font-bold shadow-sm'
                   : 'bg-[#1e1e1a] text-outline hover:text-purple-300 hover:bg-[#2a2a22]'
-              }`}
+                }`}
               title="Force Arcane Fog (1.15x XP)"
             >
               <span className="material-symbols-outlined text-[13px]">blur_on</span>
@@ -277,7 +272,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         <AnimatePresence>
           {showIntroDialog && onStartQuest && onGrantReward && (
             <div className="absolute left-6 top-6 z-30 w-72 md:w-80">
-              <DialogGreeting 
+              <DialogGreeting
                 onStartQuest={onStartQuest}
                 onGrantReward={onGrantReward}
                 earnedGold={introRewardClaimed}
@@ -287,31 +282,31 @@ export const WorldMap: React.FC<WorldMapProps> = ({
         </AnimatePresence>
 
         {/* Cinematic Map Panning Zoom Wrapper */}
-        <motion.div 
+        <motion.div
           className="w-full h-full relative"
           animate={zoomingTo ? {
             scale: 2.3,
-            x: zoomingTo === 'workshop' ? '18%' : 
-               zoomingTo === 'library' ? '-38%' : 
-               zoomingTo === 'life' ? '-10%' : 
-               zoomingTo === 'progress' ? '28%' : 
-               zoomingTo === 'garden' ? '-18%' : 
-               zoomingTo === 'observatory' ? '-40%' : 
-               zoomingTo === 'lab' ? '4%' : 
-               zoomingTo === 'cave' ? '12%' : 0,
-            y: zoomingTo === 'workshop' ? '24%' : 
-               zoomingTo === 'library' ? '28%' : 
-               zoomingTo === 'life' ? '30%' : 
-               zoomingTo === 'progress' ? '-12%' : 
-               zoomingTo === 'garden' ? '-12%' : 
-               zoomingTo === 'observatory' ? '-15%' : 
-               zoomingTo === 'lab' ? '-12%' : 
-               zoomingTo === 'cave' ? '-40%' : 0,
+            x: zoomingTo === 'workshop' ? '18%' :
+              zoomingTo === 'library' ? '-38%' :
+                zoomingTo === 'life' ? '-10%' :
+                  zoomingTo === 'progress' ? '28%' :
+                    zoomingTo === 'garden' ? '-18%' :
+                      zoomingTo === 'observatory' ? '-40%' :
+                        zoomingTo === 'lab' ? '4%' :
+                          zoomingTo === 'cave' ? '12%' : 0,
+            y: zoomingTo === 'workshop' ? '24%' :
+              zoomingTo === 'library' ? '28%' :
+                zoomingTo === 'life' ? '30%' :
+                  zoomingTo === 'progress' ? '-12%' :
+                    zoomingTo === 'garden' ? '-12%' :
+                      zoomingTo === 'observatory' ? '-15%' :
+                        zoomingTo === 'lab' ? '-12%' :
+                          zoomingTo === 'cave' ? '-40%' : 0,
           } : { scale: 1, x: 0, y: 0 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
         >
           {/* Invisible interactive fountain click-secret overlay coordinates */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.15 }}
             onClick={handleFountainClick}
             className="absolute left-[50.5%] top-[46.5%] -translate-x-1/2 -translate-y-1/2 cursor-pointer group select-none z-25 flex flex-col items-center"
@@ -324,7 +319,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
 
           {/* Animated Jiya character sprite standing next to the Town Fountain */}
           <div className="absolute left-[37.5%] top-[44.5%] -translate-x-1/2 -translate-y-1/2 select-none z-20 pointer-events-none flex flex-col items-center">
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -2, 0] }}
               transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
               className="flex flex-col items-center"
@@ -351,10 +346,10 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                 <div className="w-1.5 h-1 bg-[#802213] rounded-sm" />
               </div>
             </motion.div>
-            
+
             {/* Micro Sprite Shadow */}
             <div className="w-5 h-1.5 bg-black/35 rounded-full mt-0.5 blur-xs" />
-            
+
             {/* Speech bubble showing welcome indicators on hover */}
             <div className="absolute bottom-full mb-1 border-2 border-primary/80 bg-background/95 px-1.5 py-0.5 rounded font-mono text-[7px] font-bold text-primary tracking-wider whitespace-nowrap opacity-75 leading-none transition-all group-hover:opacity-100 select-none shadow">
               JIYA LVL 22
@@ -362,7 +357,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
           </div>
 
           {/* Invisible interactive Rowboat click secret overlay coordinates */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.15 }}
             onClick={handleBoatClick}
             className="absolute left-[79%] top-[82.5%] -translate-x-1/2 -translate-y-1/2 cursor-pointer group select-none z-25 flex flex-col items-center"
@@ -374,7 +369,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
           </motion.div>
 
           {/* Campfire logs bonfire click-secret right inside camper van campsites */}
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.15 }}
             onClick={handleCampfireClick}
             className="absolute left-[36%] top-[85.5%] -translate-x-1/2 -translate-y-1/2 cursor-pointer group select-none z-25 flex flex-col items-center"
@@ -388,8 +383,8 @@ export const WorldMap: React.FC<WorldMapProps> = ({
           {/* Dynamic stars/sun and Jiya's Celestial Zenith Star secret in sky */}
           <div className="absolute top-4 right-12 flex gap-3 items-center z-20">
             <div className="w-1 h-1 bg-white rounded-full animate-ping opacity-25" />
-            
-            <motion.div 
+
+            <motion.div
               whileHover={{ scale: 1.35 }}
               onClick={handleStarClick}
               className="w-5.5 h-5.5 rounded-full border border-yellow-500/30 bg-yellow-950/40 hover:bg-yellow-900/65 flex items-center justify-center cursor-pointer select-none transition-colors"
@@ -417,15 +412,15 @@ export const WorldMap: React.FC<WorldMapProps> = ({
             if (loc.id === 'cave') pos = "left-[36%] top-[86%]";
 
             return (
-              <div 
-                key={loc.id} 
+              <div
+                key={loc.id}
                 className={`absolute ${pos} z-20`}
                 style={{ transform: 'translate(-50%, -50%)' }}
                 onMouseEnter={() => setHoveredLoc(loc.id)}
                 onMouseLeave={() => setHoveredLoc(null)}
               >
                 <div className="relative flex flex-col items-center">
-                  
+
                   {/* FLOATING HOVER TOOLTIP */}
                   <AnimatePresence>
                     {isHovered && !zoomingTo && (
@@ -454,7 +449,7 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                   )}
 
                   {/* Marker Pointer wrapper */}
-                  <motion.div 
+                  <motion.div
                     whileHover={{ scale: 1.05 }}
                     onClick={() => handleLocationClick(loc.id)}
                     className="cursor-pointer flex flex-col items-center group relative z-10"
@@ -468,14 +463,12 @@ export const WorldMap: React.FC<WorldMapProps> = ({
                     )}
 
                     {/* Highly polished, Cozy 16-bit Signboard marker button overlay */}
-                    <div className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md border-2 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.55)] cursor-pointer group select-none whitespace-nowrap bg-black/85 ${
-                      isHovered || isTarget
+                    <div className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md border-2 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.55)] cursor-pointer group select-none whitespace-nowrap bg-black/85 ${isHovered || isTarget
                         ? 'border-primary text-primary scale-105 shadow-[0_4px_15px_rgba(255,214,90,0.35)] ring-1 ring-primary/45'
                         : 'border-[#4a3b32] text-stone-300'
-                    }`}>
-                      <span className={`material-symbols-outlined text-[15px] transition-colors ${
-                        isHovered || isTarget ? 'text-primary' : 'text-stone-400'
                       }`}>
+                      <span className={`material-symbols-outlined text-[15px] transition-colors ${isHovered || isTarget ? 'text-primary' : 'text-stone-400'
+                        }`}>
                         {loc.icon}
                       </span>
                       <div className="flex flex-col text-left leading-none">
@@ -523,15 +516,14 @@ export const WorldMap: React.FC<WorldMapProps> = ({
           {WORLD_LOCATIONS.map((loc) => {
             const hasQuest = isQuestTarget(loc.id);
             return (
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -3 }}
                 key={loc.id}
                 onClick={() => handleLocationClick(loc.id)}
-                className={`p-4 rounded-lg cursor-pointer border-2 transition-all flex flex-col justify-between carved-panel relative overflow-hidden group ${
-                  hasQuest 
-                    ? 'border-primary bg-primary/5 shadow' 
+                className={`p-4 rounded-lg cursor-pointer border-2 transition-all flex flex-col justify-between carved-panel relative overflow-hidden group ${hasQuest
+                    ? 'border-primary bg-primary/5 shadow'
                     : 'border-[#3D3D35] hover:border-[#55554D] bg-surface-container-low hover:bg-surface-container'
-                }`}
+                  }`}
               >
                 {/* Active Quest banner label */}
                 {hasQuest && (

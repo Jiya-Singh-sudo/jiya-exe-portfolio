@@ -30,24 +30,24 @@ const CONSTELLATION_LINKS = [
 
 const STAR_COORDINATES: Record<string, { x: number; y: number }> = {
   // Arrow tip (upper-left) — steep angle pointing up-left
-  'dec-arrow-tip':    { x: 18, y: 8 },   // Alpha Sgr (Rukbat) - arrowhead tip
-  'dec-arrow-base':   { x: 26, y: 20 },  // Beta Sgr (Arkab) - arrowhead base
+  'dec-arrow-tip': { x: 18, y: 8 },   // Alpha Sgr (Rukbat) - arrowhead tip
+  'dec-arrow-base': { x: 26, y: 20 },  // Beta Sgr (Arkab) - arrowhead base
   // Left bow curve — distinctly to the left
-  'build-products':   { x: 13, y: 44 },  // Gamma 2 Sgr (Alnasl) - left bow star
-  'dec-lower-bow':    { x: 17, y: 56 },  // Rho Sgr - lower bow extension
+  'build-products': { x: 13, y: 44 },  // Gamma 2 Sgr (Alnasl) - left bow star
+  'dec-lower-bow': { x: 17, y: 56 },  // Rho Sgr - lower bow extension
   // Central junction
-  'master-ai':        { x: 38, y: 36 },  // Delta Sgr (Kaus Media) - main junction
+  'master-ai': { x: 38, y: 36 },  // Delta Sgr (Kaus Media) - main junction
   // Upper body (sweeping right at ~45°)
   'financial-freedom': { x: 52, y: 22 }, // Lambda Sgr (Kaus Borealis)
-  'software-eng':     { x: 63, y: 13 },  // Phi Sgr — pushed higher
+  'software-eng': { x: 63, y: 13 },  // Phi Sgr — pushed higher
   // Right side — pushed further right
-  'travel':           { x: 73, y: 25 },  // Sigma Sgr (Nunki)
-  'dec-tau-sgr':      { x: 64, y: 38 },  // Tau Sgr - right going down
+  'travel': { x: 73, y: 25 },  // Sigma Sgr (Nunki)
+  'dec-tau-sgr': { x: 64, y: 38 },  // Tau Sgr - right going down
   // Lower body
-  'dec-body-center':  { x: 46, y: 48 },  // Pi Sgr (Albaldah) - center body
+  'dec-body-center': { x: 46, y: 48 },  // Pi Sgr (Albaldah) - center body
   'lifelong-learning': { x: 50, y: 56 }, // Zeta Sgr (Ascella)
   // Bottom prominent star
-  'research-innov':   { x: 52, y: 70 }   // Epsilon Sgr (Kaus Australis) - largest star
+  'research-innov': { x: 52, y: 70 }   // Epsilon Sgr (Kaus Australis) - largest star
 };
 
 const ASTRONOMICAL_NAMES: Record<string, string> = {
@@ -98,7 +98,7 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
       return g;
     }));
   };
-  
+
   // Combine interactive destiny stars with purely decorative ones
   const [stars] = useState<StarNode[]>(() => {
     const decorativeNodes: StarNode[] = [
@@ -168,14 +168,14 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
 
   return (
     <div className="retro-frame flex flex-col md:flex-row min-h-[550px] w-full overflow-hidden text-white rounded">
-      
+
       {/* Left Sidebar Navigation */}
       <div className="w-full md:w-[28%] border-b-4 md:border-b-0 md:border-r-4 border-[#1a1008] bg-[#1b140f] p-5 flex flex-col justify-between select-none">
         <div>
           <h3 className="font-pixel-title text-[9px] leading-relaxed uppercase tracking-wider text-[#ffd65a] mb-5">
             THE STARS I'M REACHING FOR
           </h3>
-          
+
           <div className="flex flex-col gap-2.5 font-pixel-text">
             {(['career', 'learning', 'personal', 'ai-research'] as const).map((cat) => {
               const isSelected = activeCategory === cat;
@@ -187,11 +187,10 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
                     setActiveCategory(cat);
                     setSelectedStar(null);
                   }}
-                  className={`w-full py-2 px-3 border-2 text-left transition-all cursor-pointer text-lg rounded flex items-center gap-2.5 ${
-                    isSelected
+                  className={`w-full py-2 px-3 border-2 text-left transition-all cursor-pointer text-lg rounded flex items-center gap-2.5 ${isSelected
                       ? 'bg-[#140d07] border-[#ffd65a] text-[#ffd65a] shadow-[0_0_8px_rgba(255,214,90,0.25)]'
                       : 'bg-transparent border-transparent text-[#8c7d70] hover:text-[#e8e3d9] hover:bg-[#1a120b]'
-                  }`}
+                    }`}
                 >
                   <span className="text-xl">
                     {cat === 'career' ? '🛠️' : cat === 'learning' ? '📚' : cat === 'personal' ? '🌱' : '🌟'}
@@ -245,7 +244,7 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
       </div>
 
       {/* Right Graphic Constellation Panel (Dashboard backdrop) */}
-      <div className="w-full md:w-[72%] relative min-h-[460px] md:min-h-auto bg-[url('/assets/constellation_background.png')] bg-[length:100%_100%] bg-no-repeat flex flex-col justify-between overflow-hidden">
+      <div className="w-full md:w-[72%] relative min-h-[460px] md:min-h-auto bg-[url('/public/constellation_background.png')] bg-[length:100%_100%] bg-no-repeat flex flex-col justify-between overflow-hidden">
         {/* Transparent overlay */}
         <div className="absolute inset-0 bg-black/15 pointer-events-none" />
 
@@ -262,7 +261,7 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
             const isFromCat = !fStar.isDecorative && fStar.category === activeCategory;
             const isToCat = !tStar.isDecorative && tStar.category === activeCategory;
             const isRelated = selectedStar?.id === link.from || selectedStar?.id === link.to;
-            
+
             let strokeColor = '#ffd65a';
             let strokeOpacity = 0.25;
             let strokeWidth = 1.4;
@@ -319,42 +318,38 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
               >
                 <div className="flex flex-col items-center relative select-none">
                   {/* Glowing selection ring */}
-                  <span 
+                  <span
                     onClick={() => handleStarClick(star)}
-                    className={`absolute -inset-4 rounded-full border border-[#ffd65a]/60 opacity-0 transition-all duration-300 cursor-pointer ${
-                      isSelected ? 'opacity-100 scale-110 animate-pulse' : 'group-hover:opacity-45'
-                    }`} 
+                    className={`absolute -inset-4 rounded-full border border-[#ffd65a]/60 opacity-0 transition-all duration-300 cursor-pointer ${isSelected ? 'opacity-100 scale-110 animate-pulse' : 'group-hover:opacity-45'
+                      }`}
                   />
 
                   {/* Pulsing visual star shape */}
-                  <div 
+                  <div
                     onClick={() => handleStarClick(star)}
-                    className={`flex items-center justify-center transition-all duration-300 cursor-pointer ${
-                      star.id === 'research-innov' ? 'w-12 h-12' : 'w-8 h-8'
-                    } ${
-                      isSelected
+                    className={`flex items-center justify-center transition-all duration-300 cursor-pointer ${star.id === 'research-innov' ? 'w-12 h-12' : 'w-8 h-8'
+                      } ${isSelected
                         ? 'scale-125 text-[#ffd65a] drop-shadow-[0_0_12px_#ffd65a]'
                         : star.id === 'research-innov'
-                        ? 'text-[#ffd65a] drop-shadow-[0_0_10px_rgba(255,214,90,0.9)]'
-                        : isMatchingCategory
-                        ? 'text-[#ffd65a] drop-shadow-[0_0_6px_rgba(255,214,90,0.85)] animate-pulse'
-                        : star.isDecorative
-                        ? 'text-[#ffd65a]/45 hover:text-[#ffd65a]/80 hover:scale-110 transition-transform'
-                        : isUnlocked
-                        ? 'text-[#ffd65a]/70 hover:text-[#ffd65a]'
-                        : 'text-gray-500/70 hover:text-gray-400'
-                    }`}
+                          ? 'text-[#ffd65a] drop-shadow-[0_0_10px_rgba(255,214,90,0.9)]'
+                          : isMatchingCategory
+                            ? 'text-[#ffd65a] drop-shadow-[0_0_6px_rgba(255,214,90,0.85)] animate-pulse'
+                            : star.isDecorative
+                              ? 'text-[#ffd65a]/45 hover:text-[#ffd65a]/80 hover:scale-110 transition-transform'
+                              : isUnlocked
+                                ? 'text-[#ffd65a]/70 hover:text-[#ffd65a]'
+                                : 'text-gray-500/70 hover:text-gray-400'
+                      }`}
                   >
-                    <span className={`material-symbols-outlined fill-current ${
-                      star.id === 'research-innov' ? 'text-3xl' : star.isDecorative ? 'text-[10px]' : 'text-lg'
-                    }`}>
+                    <span className={`material-symbols-outlined fill-current ${star.id === 'research-innov' ? 'text-3xl' : star.isDecorative ? 'text-[10px]' : 'text-lg'
+                      }`}>
                       star
                     </span>
                   </div>
 
                   {/* Bubble label */}
                   {isMatchingCategory ? (
-                    <div 
+                    <div
                       onClick={() => handleStarClick(star)}
                       className={`mt-1 flex items-center gap-1 px-1.5 py-0.5 rounded bg-black border border-[#ffd65a] text-[#ffd65a] font-pixel-text text-[9px] scale-105 shadow-md cursor-pointer`}
                     >
@@ -362,13 +357,12 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
                       <span>{star.name}</span>
                     </div>
                   ) : (
-                    <span 
+                    <span
                       onClick={() => handleStarClick(star)}
-                      className={`mt-1 font-pixel-text whitespace-nowrap transition-opacity cursor-pointer ${
-                        star.isDecorative 
-                          ? 'text-[#8c7d70]/80 text-[8px] opacity-0 group-hover:opacity-100' 
+                      className={`mt-1 font-pixel-text whitespace-nowrap transition-opacity cursor-pointer ${star.isDecorative
+                          ? 'text-[#8c7d70]/80 text-[8px] opacity-0 group-hover:opacity-100'
                           : 'text-[#e8e3d9] opacity-80 text-[10px]'
-                      }`}
+                        }`}
                     >
                       {star.name}
                     </span>
@@ -381,9 +375,8 @@ export const ConstellationPanel: React.FC<ConstellationPanelProps> = ({
                         initial={{ opacity: 0, y: coords.y < 35 ? -10 : 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: coords.y < 35 ? -10 : 10, scale: 0.95 }}
-                        className={`absolute left-1/2 -translate-x-1/2 z-30 w-52 border-2 border-[#5c4028] bg-[#140d07] p-2.5 rounded shadow-[0_4px_16px_rgba(0,0,0,0.85)] text-left select-text ${
-                          coords.y < 35 ? 'top-full mt-3' : 'bottom-full mb-3'
-                        }`}
+                        className={`absolute left-1/2 -translate-x-1/2 z-30 w-52 border-2 border-[#5c4028] bg-[#140d07] p-2.5 rounded shadow-[0_4px_16px_rgba(0,0,0,0.85)] text-left select-text ${coords.y < 35 ? 'top-full mt-3' : 'bottom-full mb-3'
+                          }`}
                         style={{
                           outline: '1px solid #1a1008'
                         }}

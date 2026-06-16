@@ -504,7 +504,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Completed'
       }
     ],
-    imageUrl: '/assets/Gym_image.png',
+    imageUrl: '/public/Gym_image.png',
     imageAlt: 'Morning workout and focused study setup'
   },
 
@@ -528,7 +528,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Completed'
       }
     ],
-    imageUrl: '/assets/networking.png',
+    imageUrl: '/public/networking.png',
     imageAlt: 'Job applications and professional networking'
   },
 
@@ -552,8 +552,8 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Completed'
       }
     ],
-    imageUrl: '/assets/work.png',
-    imageAlt: 'Coding and engineering workflow'
+    imageUrl: '/public/work.png',
+    imageAlt: 'Coding an  d engineering workflow'
   },
 
   {
@@ -576,7 +576,7 @@ export const DAY_SEGMENTS: DaySegment[] = [
         statusText: 'Active'
       }
     ],
-    imageUrl: '/assets/study.png',
+    imageUrl: '/public/study.png',
     imageAlt: 'Night planning and reflection'
   }
 ];
@@ -730,14 +730,14 @@ export const LESSONS_LEARNED: LessonLeaned[] = [
 
 export const GARDEN_NODES: GardenNode[] = [
   { id: 'jiya', label: 'JIYA', x: 50, y: 50, group: 'root', description: 'Curious human, builder, full-stack wizard.' },
-  
+
   // First Layer Branches
   { id: 'engineering', label: 'Engineering', x: 25, y: 40, group: 'engineering', description: 'Structuring robust systems, data flows, and clean architectures.' },
   { id: 'ai', label: 'AI', x: 50, y: 22, group: 'ai', description: 'Integrating LLMs, prompt engineering, and intelligent agents.' },
   { id: 'productivity', label: 'Productivity', x: 75, y: 40, group: 'productivity', description: 'Systems for focused output, habit loops, and tracking progress.' },
   { id: 'creativity', label: 'Creativity', x: 65, y: 75, group: 'creative', description: 'Writing logs, capturing photography, and building side products.' },
   { id: 'life', label: 'Life', x: 35, y: 75, group: 'life', description: 'Health investments, personal finance, books, and traveling.' },
-  
+
   // Engineering Leaves
   { id: 'system-design', label: 'System Design', x: 10, y: 25, group: 'engineering', description: 'Learning how large-scale software systems stay reliable, scalable, and maintainable.' },
   { id: 'backend-arch', label: 'Backend Architecture', x: 8, y: 35, group: 'engineering', description: 'Designing robust database adapters, routing layers, and microservices queues.' },
@@ -746,7 +746,7 @@ export const GARDEN_NODES: GardenNode[] = [
   { id: 'scalability', label: 'Scalability', x: 15, y: 65, group: 'engineering', description: 'Load balancers, replication, partitioning index strategies, and memory optimization.' },
   { id: 'clean-code', label: 'Clean Code', x: 22, y: 22, group: 'engineering', description: 'Writing readable, reusable, modular code enforcing DRY/SOLID paradigms.' },
   { id: 'security', label: 'Security', x: 12, y: 15, group: 'engineering', description: 'Penetration testing, encryption standards, vulnerability checks, and security designs.' },
-  
+
   // AI Leaves
   { id: 'gemini-api', label: 'Gemini API', x: 36, y: 12, group: 'ai', description: 'Leveraging Gemini flash and pro models to generate dynamic contextual quest content.' },
   { id: 'ai-agents', label: 'AI Agents', x: 43, y: 8, group: 'ai', description: 'Systems that can reason, act, and automate workflows with minimal human intervention.' },
@@ -755,7 +755,7 @@ export const GARDEN_NODES: GardenNode[] = [
   { id: 'rag', label: 'RAG', x: 64, y: 12, group: 'ai', description: 'Retrieval Augmented Generation using semantic search vector databases.' },
   { id: 'embeddings', label: 'Embeddings', x: 70, y: 18, group: 'ai', description: 'Mathematical representations of text semantics used in similarity lookups.' },
   { id: 'automation', label: 'Automation', x: 30, y: 18, group: 'ai', description: 'Scripting tools, web scrappers, and automated agent action chains.' },
-  
+
   // Productivity Leaves
   { id: 'atomic-habits', label: 'Atomic Habits', x: 88, y: 25, group: 'productivity', description: 'Structuring visual checks to build tiny, atomic daily habits that compound.' },
   { id: 'deep-work', label: 'Deep Work', x: 91, y: 35, group: 'productivity', description: 'Blocking distractions and concentrating on cognitively demanding developer tasks.' },
@@ -763,14 +763,14 @@ export const GARDEN_NODES: GardenNode[] = [
   { id: 'focus-systems', label: 'Focus Systems', x: 90, y: 55, group: 'productivity', description: 'Structuring Pomodoro intervals and visual tracking logs.' },
   { id: 'goal-tracking', label: 'Goal Tracking', x: 86, y: 65, group: 'productivity', description: 'Breaking yearly aspirations into weekly milestones and deliverables.' },
   { id: 'learning-systems', label: 'Learning Systems', x: 80, y: 22, group: 'productivity', description: 'Structured active recall, spaced repetition, and index building.' },
-  
+
   // Creativity Leaves
   { id: 'photography', label: 'Photography', x: 80, y: 80, group: 'creative', description: 'Capturing landscapes, street layout perspectives, and digital pixel art.' },
   { id: 'writing', label: 'Writing', x: 74, y: 88, group: 'creative', description: 'Writing logs, dev diaries, tutorials, and documentations.' },
   { id: 'ui-design', label: 'UI Design', x: 65, y: 92, group: 'creative', description: 'Crafting responsive layout blueprints, micro-animations, and CSS tokens.' },
   { id: 'storytelling', label: 'Storytelling', x: 56, y: 90, group: 'creative', description: 'Drafting quests, procedurally forged scrolls, and roleplaying scenarios.' },
   { id: 'side-projects', label: 'Building Side Projects', x: 85, y: 70, group: 'creative', description: 'Synthesizing simple web applications, tools, and scripts in real time.' },
-  
+
   // Life Leaves
   { id: 'fitness', label: 'Fitness', x: 20, y: 80, group: 'life', description: 'Consistency over intensity. Small daily investments compound over time.' },
   { id: 'books', label: 'Books', x: 26, y: 88, group: 'life', description: 'A collection of ideas borrowed from authors who spent decades learning things the hard way.' },

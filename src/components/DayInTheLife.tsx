@@ -22,13 +22,13 @@ const segmentSubtitles: Record<string, string> = {
 };
 
 const galleryImages = [
-  { url: '/assets/GATE_study.png', alt: 'GATE & Study' },
-  { url: '/assets/food_hobby.png', alt: 'Food & Hobby' },
-  { url: '/assets/Developing.png', alt: 'Projects & Coding' },
-  { url: '/assets/swimming_hobby.png', alt: 'Swimming & Reflection' },
-  { url: '/assets/reading_hobby.png', alt: 'Reading & AI' },
-  { url: '/assets/chess_hobby.png', alt: 'Chess & Strategy' },
-  { url: '/assets/dancing_hobby.png', alt: 'Dancing & Creative Time' },
+  { url: '/public/GATE_study.png', alt: 'GATE & Study' },
+  { url: '/public/food_hobby.png', alt: 'Food & Hobby' },
+  { url: '/public/Developing.png', alt: 'Projects & Coding' },
+  { url: '/public/swimming_hobby.png', alt: 'Swimming & Reflection' },
+  { url: '/public/reading_hobby.png', alt: 'Reading & AI' },
+  { url: '/public/chess_hobby.png', alt: 'Chess & Strategy' },
+  { url: '/public/dancing_hobby.png', alt: 'Dancing & Creative Time' },
 ];
 
 export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheLifeProps) {
@@ -54,8 +54,8 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
           </div>
         </div>
         {onClose && (
-          <button 
-            onClick={onClose} 
+          <button
+            onClick={onClose}
             className="p-1 rounded border border-outline-variant hover:border-primary text-outline hover:text-white transition-colors cursor-pointer flex items-center justify-center w-8 h-8"
           >
             <span className="material-symbols-outlined text-[18px]">close</span>
@@ -65,7 +65,7 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
 
       {/* Grid split container */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-start">
-        
+
         {/* Left Sidebar (Day segment select cards) */}
         <div className="md:col-span-4 flex flex-col gap-3">
           <div className="flex flex-col gap-2.5">
@@ -78,11 +78,10 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
                     triggerSound();
                     setActiveSegmentId(seg.id);
                   }}
-                  className={`p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer flex items-center gap-3 select-none ${
-                    isSelected
+                  className={`p-4 rounded-xl border-2 transition-all duration-200 cursor-pointer flex items-center gap-3 select-none ${isSelected
                       ? 'border-primary bg-primary/5 shadow-[0_0_12px_rgba(242,202,80,0.12)]'
                       : 'border-outline-variant bg-surface-container-low hover:bg-surface-container'
-                  }`}
+                    }`}
                 >
                   <div className="text-2xl group-hover:scale-110 transition-transform">
                     {iconMap[seg.id] ?? '⏰'}
@@ -114,7 +113,7 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
 
         {/* Right Main Detailed View */}
         <div className="md:col-span-8 flex flex-col gap-5">
-          
+
           {/* Top Card (Horizontal Layout) */}
           <div className="bg-surface-container-low border border-outline-variant rounded-xl p-5 md:p-6 flex flex-col lg:flex-row gap-5 items-stretch justify-between">
             <div className="flex-grow flex flex-col justify-center min-w-0 pr-0 lg:pr-4">
@@ -128,7 +127,7 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
                 {activeSegment.desc}
               </p>
             </div>
-            
+
             <div className="w-full lg:w-72 h-36 lg:h-auto rounded-lg overflow-hidden border border-outline-variant/60 flex-shrink-0 relative">
               <img
                 src={activeSegment.imageUrl}
@@ -161,9 +160,8 @@ export default function DayInTheLife({ onClose, soundEnabled = true }: DayInTheL
 
                 {/* Status Indicator */}
                 <div className="flex justify-between items-center mt-4 z-10 relative border-t border-outline-variant/30 pt-2">
-                  <span className={`font-mono text-[9px] uppercase tracking-wider font-semibold ${
-                    log.statusText === 'Active' ? 'text-primary animate-pulse' : 'text-outline'
-                  }`}>
+                  <span className={`font-mono text-[9px] uppercase tracking-wider font-semibold ${log.statusText === 'Active' ? 'text-primary animate-pulse' : 'text-outline'
+                    }`}>
                     {log.statusText}
                   </span>
                 </div>
